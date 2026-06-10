@@ -1,4 +1,5 @@
 # Imports
+import os
 from sklearn import datasets
 from sklearn import linear_model
 from sklearn import metrics
@@ -95,6 +96,8 @@ print("Manual GD MSE: %.2f" % manual_mse)
 relative_difference = abs(manual_mse - mean_squared_error) / mean_squared_error * 100
 print("Relative MSE difference: %.2f%%" % relative_difference)
 
+
+os.makedirs("images/linear_regression", exist_ok=True)
 # Plot 1: MSE vs. Iteration
 plt.figure(figsize=(8, 5))
 plt.plot(mse_history)
